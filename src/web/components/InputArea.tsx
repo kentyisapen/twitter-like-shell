@@ -6,8 +6,8 @@ import { RiSendPlane2Line } from 'react-icons/ri'
 export const InputArea = () => {
   const [value, setValue] = useState<string>("");
 
-  const execCommand = (cmd: string) => {
-    console.log((window as any).electronAPI.execCommand(cmd))
+  const execCommand = async (cmd: string) => {
+    console.log(await (window as any).electronAPI.execCommand(cmd))
     setValue("")
   }
 
