@@ -1,14 +1,26 @@
 import path from 'node:path'
 import {BrowserWindow , app, ipcMain } from 'electron'
 
+const util = require('util');
+const childProcess = require('child_process');
+const exec = util.promisify(childProcess.exec);
+const Encoding = require('encoding-japanese');
+
 const handleSetTitle =  (event: any, title: any) => {
     const webContents = event.sender
     const win = BrowserWindow.fromWebContents(webContents)
     win?.setTitle(title)
 }
 
-const handleExecCommand = (event: any, cmd: string) => {
-    return cmd
+const handleExecCommand = async (event: any, cmd: string) => {
+    try {
+        const res = (await exec(cmd))
+        console.log(res);
+        return Encoding.convert(res.stdout, { from: 'SJIS', to: 'UNICODE', type: 'string' });
+    } catch(eres: any) {
+        console.log(eres)
+        return Encoding.convert(eres.stderr, { from: 'SJIS', to: 'UNICODE', type: 'string' });
+    }
 }
 
 app.whenReady().then(() => {
