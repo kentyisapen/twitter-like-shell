@@ -4,6 +4,9 @@ import { Configuration } from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
+const dotenv = require('dotenv')
+const env = dotenv.config().parsed;
+
 // 開発者モードか否かで処理を分岐する
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -67,6 +70,7 @@ const common: Configuration = {
    * 表示されてしまうことに注意
    */
   devtool: isDev ? 'source-map' : undefined,
+  target: 'node'
 };
 
 // メインプロセス向け設定

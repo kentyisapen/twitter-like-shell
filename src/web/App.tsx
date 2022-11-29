@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
 
-export const App = () => {
+export const App =  () => {
+  (window as any).electronAPI.execCommand("logaaa").then((res: any) => console.log(res));
   return (
     <div className="container">
-      <h1>Hello.</h1>
+      <h1>Hellooo.</h1>
     </div>
   );
 };
