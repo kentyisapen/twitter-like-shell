@@ -2,13 +2,31 @@ import React, { useEffect, useState } from 'react';
 import classes from "../styles/InputArea.module.css"
 import TextAreaAutoSize from 'react-textarea-autosize'
 import { RiSendPlane2Line } from 'react-icons/ri'
+import { Message as MessageInterface, NewMessage as NewMessageInterface } from '../types/message'
 
-export const InputArea = () => {
+interface InputAreaProps {
+  createMessage: (message: NewMessageInterface) => Promise<any>
+}
+
+export const InputArea = (props: InputAreaProps) => {
+  const {createMessage} = props
   const [value, setValue] = useState<string>("");
 
+  const sleep = (ms: number) => new Promise(res => setTimeout(res, ms))
+
   const execCommand = async (cmd: string) => {
-    console.log(await (window as any).electronAPI.execCommand(cmd))
-    setValue("")
+    const newOwnMessage: NewMessageInterface = {
+      text: cmd,
+      isOwn: true
+    }
+    await createMessage(newOwnMessage)
+    const newMessage: NewMessageInterface = {
+      text: await (window as any).electronAPI.execCommand(cmd),
+      isOwn: false
+    }
+    await createMessage(newMessage).then(() => {
+      setValue("")
+    })
   }
 
   const handleSubmit = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
