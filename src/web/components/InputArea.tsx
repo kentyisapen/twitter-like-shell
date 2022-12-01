@@ -12,8 +12,6 @@ export const InputArea = (props: InputAreaProps) => {
   const {createMessage} = props
   const [value, setValue] = useState<string>("");
 
-  const sleep = (ms: number) => new Promise(res => setTimeout(res, ms))
-
   const execCommand = async (cmd: string) => {
     const newOwnMessage: NewMessageInterface = {
       text: cmd,
