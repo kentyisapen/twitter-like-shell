@@ -1,0 +1,30 @@
+.message_wrapper {
+  display: flex;
+}
+
+.message {
+  text-align: left;
+  background-color: azure;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 20px
+}
+
+.own > .message {
+  background-color: rgb(29, 155, 240);
+  color: white;
+}
+
+.not_own > .message {
+  background-color: rgb(239, 243, 244);
+  color: rgb(15, 20, 25);
+}
+
+.own {
+  justify-content: flex-end;
+  color: white;
+}
+
+.not_own {
+  justify-content: flex-start;
+}
