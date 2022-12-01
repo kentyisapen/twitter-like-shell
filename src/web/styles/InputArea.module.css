@@ -1,8 +1,11 @@
 .input_area {
+  border-top: solid 1px rgb(239, 243, 244);
+  background-color: white;
+  padding: 10px 20px;
   display: flex;
   position: relative;
-  width: 100%;
-  margin:0 auto;
+  width: calc(100% - 20px);
+  
 }
 
 .text_area {
@@ -17,7 +20,7 @@
 
 .submit_button {
   position: absolute;
-  right: 20px;
+  right: 35px;
   top: 50%;
   transform: translateY(-50%);
   border:none;
