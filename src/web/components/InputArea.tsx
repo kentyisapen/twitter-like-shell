@@ -53,8 +53,17 @@ export const InputArea = (props: InputAreaProps) => {
 		return;
 	};
 
-	const handleOnChange = (value: string) => {
-		setValue(value);
+	const handleOnChange = (newValue: string) => {
+		console.log(value);
+		console.log(newValue);
+		if (newValue.slice(-1) === "\n" && newValue.length > value.length) {
+			setValue(newValue);
+		}
+		setValue(newValue);
+	};
+
+	const isKeyBoardEvent = (e: any): e is React.KeyboardEvent => {
+		return !!(e as React.KeyboardEvent)?.key;
 	};
 
 	return (
