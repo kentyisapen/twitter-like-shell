@@ -2,6 +2,13 @@
 
 - twitterみたいな対話形式のシェル（っぽいただのデスクトップアプリケーション）
 
+## 使用技術
+
+- Typescript
+- Node.js
+  - Electron
+  - React
+
 ## 始め方
 
 1. node.jsのインストール
