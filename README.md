@@ -16,6 +16,7 @@
 3. npm ci
 4. npm run dev
 
-## 参考
+## 参考・着想
 
+https://github.com/kenjinote/cmdchat
 https://forest.watch.impress.co.jp/docs/serial/yajiuma/1283957.html
