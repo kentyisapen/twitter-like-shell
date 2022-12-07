@@ -6,6 +6,7 @@ import {
 	Message as MessageInterface,
 	NewMessage as NewMessageInterface,
 } from "../types/message";
+import { TopMessage } from "./TopMessage";
 
 export const ChatArea = () => {
 	const [messages, setMessages] = useState<MessageInterface[]>([]);
@@ -40,6 +41,7 @@ export const ChatArea = () => {
 
 	return (
 		<div className={classes.chat_area}>
+			<TopMessage></TopMessage>
 			<MessageArea messages={messages}></MessageArea>
 			<InputArea createMessage={createMessage}></InputArea>
 		</div>

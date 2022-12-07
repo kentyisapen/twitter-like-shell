@@ -4,8 +4,6 @@
   padding: 10px 20px;
   display: flex;
   position: relative;
-  width: calc(100% - 20px);
-  
 }
 
 .text_area {
