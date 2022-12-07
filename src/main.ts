@@ -31,7 +31,7 @@ app.whenReady().then(() => {
 	});
 
 	ipcMain.handle("execCommand", handleExecCommand);
-
+	mainWindow.maximize();
 	mainWindow.loadFile("dist/index.html");
 });
 
