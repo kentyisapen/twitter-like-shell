@@ -41,7 +41,6 @@ export const ChatArea = () => {
 
 	return (
 		<div className={classes.chat_area}>
-			<TopMessage></TopMessage>
 			<MessageArea messages={messages}></MessageArea>
 			<InputArea createMessage={createMessage}></InputArea>
 		</div>
