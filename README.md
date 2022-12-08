@@ -11,10 +11,11 @@
 
 ## 始め方
 
-1. node.jsのインストール
-2. git clone
-3. npm ci
-4. npm run dev
+1. install node.js
+2. install npm
+3. clone this repository
+4. $ npm ci
+5. $ npm run dev
 
 ## 参考・着想
 
