@@ -11,9 +11,9 @@ import { TopMessage } from "./TopMessage";
 export const ChatArea = () => {
 	const [messages, setMessages] = useState<MessageInterface[]>([]);
 
-	useEffect(() => {
-		console.log(messages);
-	}, [messages]);
+	// useEffect(() => {
+	// 	console.log(messages);
+	// }, [messages]);
 
 	const generateUUID = () => {
 		return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(

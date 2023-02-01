@@ -23,6 +23,10 @@ const handleExecCommand = async (_event: any, cmd: string) => {
 	}
 };
 
+const handleDetectOs = () => {
+	return process.platform;
+};
+
 app.whenReady().then(() => {
 	const mainWindow = new BrowserWindow({
 		webPreferences: {
@@ -31,6 +35,7 @@ app.whenReady().then(() => {
 	});
 
 	ipcMain.handle("execCommand", handleExecCommand);
+	ipcMain.handle("detectOs", handleDetectOs);
 	mainWindow.maximize();
 	mainWindow.loadFile("dist/index.html");
 });

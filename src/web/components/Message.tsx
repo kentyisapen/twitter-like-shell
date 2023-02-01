@@ -10,7 +10,6 @@ interface MessageProps {
 
 export const Message = (props: MessageProps) => {
 	const { message } = props;
-	console.log(classes);
 	return (
 		<div
 			className={`${classes.message_wrapper} ${

@@ -6,6 +6,10 @@
   position: relative;
 }
 
+.input_area:before {
+  background-color: rgba(0,0,0,0.5)
+}
+
 .text_area {
   padding: 10px;
   padding-right: 50px;
